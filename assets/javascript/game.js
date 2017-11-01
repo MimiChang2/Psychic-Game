@@ -23,6 +23,7 @@ document.onkeyup = function(event) {
         wins++;
         guesses = 10;
         sofar = [];
+        //--computer needs to pick a new letter--//
     }
     else {
         guesses--;
@@ -39,6 +40,8 @@ document.onkeyup = function(event) {
     //Log Guesses So Far:
 
     sofar.push(userGuess)
+
+    //--need to also figure out how to alert user if they pick the same letter again--//
 
 
 
