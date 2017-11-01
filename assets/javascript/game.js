@@ -35,12 +35,11 @@ document.onkeyup = function(event) {
 
     }
 
-    //need to figure out how to reset the game when guesses = 0.
-
 
     //Log Guesses So Far:
 
     sofar.push(userGuess)
+
 
 
     document.getElementById('wins').innerHTML = "Wins: " + wins;
