@@ -10,6 +10,12 @@ var losses = 0;
 var guesses = 10;
 var sofar = [];
 
+function resetGame() {
+    guesses = 10;
+    sofar = [];
+    compGuess = allChoices[Math.floor(Math.random() * allChoices.length)];
+    console.log(compGuess);
+}
 
 // This function is run whenever the user presses a key.
 document.onkeyup = function(event) {
@@ -17,13 +23,17 @@ document.onkeyup = function(event) {
     // Determines which key was pressed.
     var userGuess = event.key;
 
+    // Did they already try this letter?
+    if(sofar.indexOf(userGuess) >= 0) {
+        alert("You've already tried that letter! Guess again.");
+        return;
+    }
+
     // This logic determines the outcome of the game
 
     if(userGuess === compGuess) {
         wins++;
-        guesses = 10;
-        sofar = [];
-        //--computer needs to pick a new letter--//
+        resetGame();
     }
     else {
         guesses--;
@@ -31,15 +41,13 @@ document.onkeyup = function(event) {
 
     if(guesses === 0) {
         losses++;
-        guesses = 10;
-        sofar = [];
-
+        resetGame();
     }
-
 
     //Log Guesses So Far:
 
     sofar.push(userGuess)
+
 
     //--need to also figure out how to alert user if they pick the same letter again--//
 
