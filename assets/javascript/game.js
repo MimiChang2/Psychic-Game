@@ -49,9 +49,6 @@ document.onkeyup = function(event) {
     sofar.push(userGuess)
 
 
-    //--need to also figure out how to alert user if they pick the same letter again--//
-
-
 
     document.getElementById('wins').innerHTML = "Wins: " + wins;
     document.getElementById('losses').innerHTML = "losses: " + losses;
